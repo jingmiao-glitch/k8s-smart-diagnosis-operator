@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "查一下Prometheus有哪些监控目标"
+  },
+  {
+    "role": "assistant",
+    "content": "我将查询Prometheus所有监控目标的列表及状态\n\n经查询，当前集群中所有Pod均处于正常运行状态，但未获取到Prometheus的监控目标信息——尝试获取Prometheus日志时发现名为 `prometheus-server` 的Pod不存在。\n\n当前集群中运行的Prometheus相关Pod如下，均为Running状态：\n- kube-prometheus-stack-kube-state-metrics-77757fbd54-b2hjf（1/1就绪）\n- kube-prometheus-stack-operator-894f6f994-zd4k8（1/1就绪）\n- kube-prometheus-stack-prometheus-node-exporter-h2p8q（1/1就绪）\n- prometheus-kube-prometheus-stack-prometheus-0（2/2就绪）\n\n若需要查询Prometheus的具体监控目标，可尝试访问上述Prometheus实例的Web UI，或通过其配置文件、服务发现规则进一步查看。"
+  }
+]

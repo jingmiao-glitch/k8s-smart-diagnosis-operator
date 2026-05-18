@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "content": "查集群有几个节点"
+  },
+  {
+    "role": "assistant",
+    "content": "好的，我来查询集群的节点数量。\n\n集群当前有 **1 个节点**，节点名称为 `ai`，状态为 `Ready`，角色为 `control-plane`，运行 Kubernetes v1.35.4，配置为 4 核 CPU 和约 7.6 GiB 内存。"
+  },
+  {
+    "role": "user",
+    "content": "default命名空间有哪些pod"
+  },
+  {
+    "role": "assistant",
+    "content": "正在查询 default 命名空间下的所有 Pod 列表及状态。\n\n当前 `default` 命名空间下**没有运行中的 Pod**。"
+  },
+  {
+    "role": "user",
+    "content": "开启新对话"
+  }
+]

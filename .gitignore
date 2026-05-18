@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+dist/
+
+# 虚拟环境
+AI-Agent-vnev/
+
+# 日志
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db

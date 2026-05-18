@@ -1,0 +1,102 @@
+{
+  "comment": "LLM 配置文件 — 所有模型通过火山引擎 OpenAI 兼容 API 调用",
+
+  "embedding": {
+    "inspection_reports": {
+      "comment": "巡检报告知识库",
+      "model": {
+        "model_name": "doubao-embedding-vision",
+        "api_key": "",
+        "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "dimensions": 2048
+      },
+      "ingest": {
+        "splitter": {
+          "chunk_size": 2048,
+          "chunk_overlap": 64
+        }
+      },
+      "retrieve": {
+        "similarity_top_k": 5,
+        "similarity_cutoff": 0.2,
+        "retrieval_mode": "hybrid",
+        "rerank": {
+          "enabled": false,
+          "top_n": 3
+        }
+      }
+    },
+    "work_records": {
+      "comment": "工作记录知识库 (来自诊断Agent生成的工作记录)",
+      "model": {
+        "model_name": "doubao-embedding-vision",
+        "api_key": "",
+        "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "dimensions": 2048
+      },
+      "ingest": {
+        "splitter": {
+          "chunk_size": 2048,
+          "chunk_overlap": 64
+        }
+      },
+      "retrieve": {
+        "similarity_top_k": 8,
+        "similarity_cutoff": 0.2,
+        "retrieval_mode": "vector",
+        "rerank": {
+          "enabled": false,
+          "top_n": 4
+        }
+      }
+    }
+  },
+
+  "llm": {
+    "dispatcher": {
+      "comment": "调度Agent模型",
+      "model_name": "Doubao-Seed-2.0-pro",
+      "api_key": "",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "temperature": 0.3,
+      "stream": false,
+      "enable_thinking": true
+    },
+    "query": {
+      "comment": "查询模型",
+      "model_name": "Doubao-Seed-2.0-pro",
+      "api_key": "",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "temperature": 0.3,
+      "stream": false,
+      "enable_thinking": false
+    },
+    "inspector": {
+      "comment": "巡检模型",
+      "model_name": "Doubao-Seed-2.0-pro",
+      "api_key": "",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "temperature": 0.3,
+      "stream": false,
+      "enable_thinking": false
+    },
+    "diagnosis_selector": {
+      "comment": "诊断调度模型",
+      "model_name": "Doubao-Seed-2.0-pro",
+      "api_key": "",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "temperature": 0.3,
+      "stream": false,
+      "enable_thinking": true
+    },
+    "diagnosis_reasoning": {
+      "comment": "诊断推理模型",
+      "model_name": "GLM-5.1",
+      "api_key": "",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3",
+      "temperature": 0.3,
+      "stream": false,
+      "enable_thinking": true
+    }
+  }
+}

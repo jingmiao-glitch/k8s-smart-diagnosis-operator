@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "查一下Prometheus监控有哪些目标在线"
+  },
+  {
+    "role": "assistant",
+    "content": "我将查询K8s集群中Prometheus监控的所有在线目标列表。\n\n查询K8s集群中Prometheus监控的所有在线目标列表\n超时超过300秒"
+  }
+]
